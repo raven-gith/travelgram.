@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'main.dart'; // Pastikan ini sesuai dengan lokasi file login page
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
@@ -58,19 +57,19 @@ class RegisterPage extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        _buildTextField(Icons.email, "EMAIL"),
+                        _buildTextField('assets/envelope.png', "EMAIL"),
                         const SizedBox(height: 10),
 
-                        _buildTextField(Icons.person, "NAMA PENGGUNA"),
+                        _buildTextField('assets/id-card.png', "NAMA PENGGUNA"),
                         const SizedBox(height: 10),
 
-                        _buildTextField(Icons.phone, "NO. TELEPON"),
+                        _buildTextField('assets/phone-flip.png', "NO. TELEPON"),
                         const SizedBox(height: 10),
 
-                        _buildTextField(Icons.lock, "KATA SANDI", obscureText: true),
+                        _buildTextField('assets/eye-crossed.png', "KATA SANDI", obscureText: true),
                         const SizedBox(height: 10),
 
-                        _buildTextField(Icons.lock, "ULANGI KATA SANDI", obscureText: true),
+                        _buildTextField('assets/eye-crossed.png', "ULANGI KATA SANDI", obscureText: true),
                         const SizedBox(height: 15),
 
                         // Submit Button
@@ -99,10 +98,7 @@ class RegisterPage extends StatelessWidget {
                               if (!context.mounted) return; // Mencegah error jika widget sudah di-unmount
 
                               // Pindah ke halaman login
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(builder: (context) => const LoginPage()),
-                              );
+                              Navigator.pushReplacementNamed(context, '/');
                             },
                             child: const Text(
                               'KIRIM',
@@ -122,12 +118,20 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
-  // Reusable TextField Widget
-  Widget _buildTextField(IconData icon, String hint, {bool obscureText = false}) {
+  // Reusable TextField Widget dengan ikon dari assets
+  Widget _buildTextField(String iconPath, String hint, {bool obscureText = false}) {
     return TextField(
       obscureText: obscureText,
       decoration: InputDecoration(
-        prefixIcon: Icon(icon),
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            iconPath,
+            width: 24,
+            height: 24,
+            errorBuilder: (context, error, stackTrace) => const Icon(Icons.error),
+          ),
+        ),
         hintText: hint,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(30),

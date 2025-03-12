@@ -55,8 +55,38 @@ flutter:
   assets:
     - assets/background.jpg
     - assets/google.png
-    - assets/sindoro.jpg
     - assets/nimo.png
+    - assets/bells.png
+    - assets/bus-alt.png
+    - assets/circle-user.png
+    - assets/menu-burger.png
+    - assets/messages.png
+    - assets/phone-call.png
+    - assets/plane-alt.png
+    - assets/search.png
+    - assets/umbrella-beach.png
+    - assets/user-headset.png
+    - assets/hotel.png
+    - assets/users.png
+    - assets/clipboard-user.png
+    - assets/train-side.png
+    - assets/lock.png
+    - assets/briefcase.png
+    - assets/eye-crossed.png
+    - assets/phone-flip.png
+    - assets/id-card.png
+    - assets/envelope.png
+    - assets/sindoro.jpg
+    - assets/heart.png
+    - assets/comment-alt-dots.png
+    - assets/home.png
+    - assets/plus.png
+    - assets/share-square.png
+
+    
+
+
+
 
 
 
